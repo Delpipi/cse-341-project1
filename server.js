@@ -18,7 +18,6 @@ app.use('/', require('./routes'));
 ******* env  *****
 ******************/
 const port = process.env.PORT || 3000;
-const host = process.env.HOST;
 
 
 /* *****************************************
@@ -29,7 +28,7 @@ mongodb.initDb((err) => {
         console.log(err);
     } else {
         app.listen(port, () => {
-            console.log(`App listening on ${host}:${port}`);
+            console.log(`App listening on ${port}`);
         });
     }
 });
