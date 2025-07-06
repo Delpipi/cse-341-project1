@@ -1,0 +1,30 @@
+{
+  "name": "cse-341-project1",
+  "version": "1.0.0",
+  "description": "This project will provide an API for storing and retrieving information about contacts.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Delpipi/cse-341-project1.git"
+  },
+  "keywords": [],
+  "author": "Kouame Alexandre Paul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Delpipi/cse-341-project1/issues"
+  },
+  "homepage": "https://github.com/Delpipi/cse-341-project1#readme",
+  "dependencies": {
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "mongodb": "^6.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
