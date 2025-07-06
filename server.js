@@ -17,8 +17,8 @@ app.use('/', require('./routes'));
 /*****************
 ******* env  *****
 ******************/
-const port = process.env.PORT
-const host = process.env.HOST
+const port = process.env.PORT || 3000;
+const host = process.env.HOST;
 
 
 /* *****************************************
