@@ -3,6 +3,8 @@
 ***************************/
 const express = require('express');
 const app = express();
+const mongodb = require('./database');
+
 require('dotenv').config();
 
 
@@ -22,6 +24,14 @@ const host = process.env.HOST
 /* *****************************************
  * Log statement to confirm server operation
  *******************************************/
-app.listen(port, () => {
-    console.log(`App listening on ${host}:${port}`);
+mongodb.initDb((err) => {
+    if (err) {
+        console.log(err);
+    } else {
+        app.listen(port, () => {
+            console.log(`App listening on ${host}:${port}`);
+        });
+    }
 });
+
+

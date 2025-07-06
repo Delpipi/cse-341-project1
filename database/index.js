@@ -6,15 +6,21 @@ const client = new MongoClient(process.env.DATABASE_URL);
 
 let db;
 
-//Try to connect(non-blocking)
-client.connect()
-    .then(() => {
-        db = client.db('cse341');
-        console.log('MongoDB initialized');
-    })
-    .catch((err) => {
-        console.error(err);
-    });
+//Initialize database
+const initDb = (callback) => {
+    if (db) {
+        console.log('Db is already initialized');
+        return callback(null, db);
+    }
+    client.connect()
+        .then((client) => {
+            db = client.db('cse341');
+            callback(null, db);
+        })
+        .catch((err) => {
+            callback(err);
+        });
+}
 
 function getDb() {
     if (!db) {
@@ -23,4 +29,4 @@ function getDb() {
     return db;
 }
 
-module.exports = { getDb };
+module.exports = { initDb, getDb };

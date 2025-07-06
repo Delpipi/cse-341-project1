@@ -7,7 +7,7 @@ GET http://localhost:9090/contacts/6869a49eb54c7f0459144452
 
 //PRODUCTION
 ### GET all contact
-GET http://localhost:5500/contacts
+GET https://cse-341-project1-a51f.onrender.com/contacts
 
 ### GET contact by id
-GET http://localhost:5500/contacts/6869a49eb54c7f0459144452
+GET https://cse-341-project1-a51f.onrender.com/6869a49eb54c7f0459144452
