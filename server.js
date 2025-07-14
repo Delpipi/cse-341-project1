@@ -6,12 +6,16 @@ const app = express();
 const mongodb = require('./database');
 const bodyParser = require('body-parser');
 
+var cors = require('cors');
+
 require('dotenv').config();
 
 
 /*********************
 ***** Middleware  ****
 **********************/
+//Enable CORS
+app.use(cors());
 
 //Aware collect value from request body functionality
 app.use(bodyParser.json());
