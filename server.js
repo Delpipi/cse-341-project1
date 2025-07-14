@@ -14,12 +14,16 @@ require('dotenv').config();
 /*********************
 ***** Middleware  ****
 **********************/
-//Enable CORS
-app.use(cors());
-
 //Aware collect value from request body functionality
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+//Enable CORS
+app.use(cors({
+    origin: '*', // or specify your frontend origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 
 /*****************
