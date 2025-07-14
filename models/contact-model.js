@@ -20,4 +20,43 @@ async function getAllContact() {
     }
 }
 
-module.exports = {getContactById, getAllContact};
+async function createContact(firstName,lastName,email,favoriteColor,birthday) {
+    const contact = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        favoriteColor: favoriteColor,
+        birthday: birthday
+    };
+    try {
+        return await getDb().collection('contacts').insertOne(contact);
+    } catch (error) {
+        throw new Error(`Database error: ${error.message}`);
+    }
+}
+
+async function updateContact(id,firstName,lastName,email,favoriteColor,birthday) {
+    var contactId = new ObjectId(id);
+      const contact = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        favoriteColor: favoriteColor,
+        birthday: birthday
+    };
+    try {
+       return await getDb().collection('contacts').replaceOne({_id: contactId}, contact)
+    } catch (error) {
+        throw new Error(`Database error: ${error.message}`);
+    }
+}
+
+async function deleteContact(id) {
+    try {
+        var contactId = new ObjectId(id);
+        return await getDb().collection('contacts').deleteOne({_id: contactId })
+    } catch (error) {
+        
+    }
+}
+module.exports = {getContactById, getAllContact, createContact, updateContact, deleteContact};

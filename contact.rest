@@ -5,6 +5,34 @@ GET http://localhost:9090/contacts
 ### GET contact by id
 GET http://localhost:9090/contacts/6869a49eb54c7f0459144452
 
+### Create contact
+POST http://localhost:9090/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Kouame",
+    "lastName": "Alexandre Paul",
+    "email": "akouame1@byupathway.edu",
+    "favoriteColor": "orange",
+    "birthday": "1986-09-24"
+}
+
+### Update contact
+PUT http://localhost:9090/contacts/6869a49eb54c7f0459144452
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "alex",
+    "email": "john.alex@example.com",
+    "favoriteColor": "Blue",
+    "birthday": "1990-05-15"
+}
+
+### Delete contact
+DELETE  http://localhost:9090/contacts/6869a49eb54c7f0459144452
+
+
 //PRODUCTION
 ### GET all contact
 GET https://cse-341-project1-a51f.onrender.com/contacts

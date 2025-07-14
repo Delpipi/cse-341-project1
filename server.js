@@ -4,8 +4,18 @@
 const express = require('express');
 const app = express();
 const mongodb = require('./database');
+const bodyParser = require('body-parser');
 
 require('dotenv').config();
+
+
+/*********************
+***** Middleware  ****
+**********************/
+
+//Aware collect value from request body functionality
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 /*****************
