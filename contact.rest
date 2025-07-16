@@ -17,6 +17,14 @@ Content-Type: application/json
     "birthday": "1986-09-24"
 }
 
+{
+    "firstName": "Kouame",
+    "lastName": "Alexandre Paul",
+    "email": "akouame1@byupathway.edu",
+    "favoriteColor": "orange",
+    "birthday": "1986-09-24"
+}
+
 ### Update contact
 PUT http://localhost:9090/contacts/6869a49eb54c7f0459144452
 Content-Type: application/json
