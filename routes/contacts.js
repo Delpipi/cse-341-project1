@@ -5,7 +5,9 @@ const validate = require('../utilities/contact-validation');
 const contactController = require('../controllers/contact-controller');
 
 //GET routes
-router.get('/', utilities.handleErrors(contactController.getAllContact));
+router.get('/',
+    utilities.handleErrors(contactController.getAllContact)
+);
 
 router.get('/:id',
     validate.contactIdRules(),
