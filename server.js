@@ -28,6 +28,20 @@ app.use(cors());
 app.use('/', require('./routes'));
 
 
+/* ******************************
+* Express Error Handler
+* Place after all other middleware
+*************************/
+app.use(async (err, req, res, next) => {
+    console.error(`Error: "${err.status}": ${err.message}`);
+    res.status(err.status || 500).json({
+        success: false,
+        statusCode: err.status,
+        message: err.message || 'Insernal Server error'
+    });
+})
+
+
 /*****************
 ******* env  *****
 ******************/

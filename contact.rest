@@ -3,7 +3,7 @@
 GET http://localhost:9090/contacts
 
 ### GET contact by id
-GET http://localhost:9090/contacts/6869a49eb54c7f0459144452
+GET http://localhost:9090/contacts/6869a49eb54c7f0459144453
 
 ### Create contact
 POST http://localhost:9090/contacts
@@ -17,16 +17,8 @@ Content-Type: application/json
     "birthday": "1986-09-24"
 }
 
-{
-    "firstName": "Kouame",
-    "lastName": "Alexandre Paul",
-    "email": "akouame1@byupathway.edu",
-    "favoriteColor": "orange",
-    "birthday": "1986-09-24"
-}
-
 ### Update contact
-PUT http://localhost:9090/contacts/6869a49eb54c7f0459144452
+PUT http://localhost:9090/contacts/6869a49eb54c7f0459144453
 Content-Type: application/json
 
 {
@@ -38,7 +30,7 @@ Content-Type: application/json
 }
 
 ### Delete contact
-DELETE  http://localhost:9090/contacts/6869a49eb54c7f0459144452
+DELETE  http://localhost:9090/contacts/6869a49b54c7f0459144452
 
 
 //PRODUCTION
